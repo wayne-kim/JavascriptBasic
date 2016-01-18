@@ -11,7 +11,7 @@ var x;
 var y=5;
 x = 3+y;
 foo(x,y);
-//조건문 if
+//06조건문 if
 if(x===0){
     x=123;
 }
@@ -21,7 +21,7 @@ function foo(a,b){
 }
 console.log(foo(x,y));
 
-//조건문
+//06조건문
 var a_man='woman';
 if(a_man==='woman'){
     console.log("여자")

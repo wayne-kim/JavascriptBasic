@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    loop
+    iterate
+-->
+<script>
+    /*
+     구구단 추력
+     CSS3 주옥같은 소리하고 있네
+     디자인까지 배우려면 어디까지 공부해야하는 거니!!
+     */
+    //i : iterate=반복하다!
+    document.write("<table>");
+    for(var i=1;i<10;i++) {
+        document.write("<tr>");
+        for (var j = 2; j < 10; j++) {
+            document.write("<td>"+ j +"x"+i +"="+ i*j +"</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+    while(true){
+        var value = prompt("1,2,3 입력해라.(q는 종료)");
+        //prompt이 개년은 문자는 반환하는 녀석이였구나 삽질하고 있었네! 빡쳐
+        switch (value){
+            case 1  : { //1을 입력해도 문자 '1'은 실행 안된다! switch문에서는 엄격하게 비교한 다는 걸 알수 있다.
+                alert("1 입력 했네");
+                //머고 왜 실행안되노1
+            } break;
+            case '2' : {
+                alert("2 입력 했네");
+                //머고 왜 실행안되노2
+            } break;
+            case '3' : {
+                alert("3입력 했네");
+                //머고 왜 실행안되노3
+            } break;
+            default : {
+                alert("default문 실행됨");
+                break;
+            }
+        }
+        if(value==='q'){
+            break;
+        } else {
+            alert("뭐 입력했노? "+value);
+            continue;
+        }
+    }
+</script>
+</body>
+</html>
