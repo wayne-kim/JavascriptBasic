@@ -1,5 +1,4 @@
 /**
  * Created by Napalm on 2016-01-18.
  */
-console.log("Abc")
-console.log("def")
+console.log("동작확인용")
