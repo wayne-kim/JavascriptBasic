@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * Created by Napalm on 2016-01-19.
+     */
+    var 남자 = {
+        'name' : '이무개',
+        'speck' : function(){
+            var value = Math.round(Math.random()*2);
+            if(value===0){
+                document.write("남자 : 어쩌구 저꺼구 그래서 미안<br>");
+            }
+            else if(value ===1){
+                document.write("남자 : 내가 태어나서 미안<br>");
+            }else {
+                document.write("남자 : 숨 쉬고 있어서 미안<br>");
+            }
+        },
+        'act' : function(){
+            alert("씨발 내가 잘못했다는 데 !!! 왜!!!!!!!! 계속!!!");
+        }
+    }
+    var 여자 = {
+        'name' : '여왕님',
+        'spcek' : function(){
+            var value = Math.round(Math.random()*2);
+            if(value==0){
+                document.write("여자 : 그래서?<br>");
+            }
+            else if(value ==1){
+                document.write("여자 : 뭘 잘못했는데?<br>");
+            }else {
+                document.write("여자 : 잘못한것도 모르자나<br>");
+            }
+
+        }
+    }
+    document.write("여자 : 자기 때문에 화났어!<br>")
+    남자.speck();
+    여자.spcek();
+    남자.speck();
+    여자.spcek();
+    남자.speck();
+    남자.act();
+    //결혼 후
+    /*
+        오버라이딩을 어케하는 겨?!!!
+     */
+    document.write('<hr>결혼후<br>');
+
+    var 부부 = {
+        남자,
+        여자
+    }
+
+    document.write("여자 : 자기는 왜 그래?<br>");
+    부부.남자.speck();
+    부부.여자.spcek();
+    부부.남자.speck();
+    부부.여자.spcek();
+    부부.남자.speck();
+    부부.여자.spcek();
+
+</script>
+</body>
+</html>
