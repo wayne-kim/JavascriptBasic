@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var peoples = {'김은찬':25,'고기훈':25,'윤성빈':26};
+    peoples['김은찬']='반오십';
+    document.write(peoples+'<br>');
+    document.write(peoples['김은찬']+'<br>');
+    document.write(peoples.고기훈+"<br>");
+
+    for(people in peoples){
+        document.write(people+"<br>"); // 키값이 출력되는 군요. 키값을 변수에 넣는 다.
+        document.write(peoples[people]+"<br>"); //이렇게하면 값이 출력되겠군
+        document.write("<hr>");
+    }
+
+    //배열 쓸때도 for-in문 쓸 수 있군 개 좋쿤
+    document.write("<ul>");
+    for(people in peoples){
+        document.write("<li>");
+        document.write(people+" : "+peoples[people]); // 키값이 출력되는 군요. 키값을 변수에 넣는 다.
+        document.write("</li>");
+    }
+    document.write("</ul>");
+
+
+</script>
+</body>
+</html>
