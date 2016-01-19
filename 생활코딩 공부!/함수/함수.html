@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function login(id, ps){
+        if(id=='root' && ps=='1234'){
+            return "로그인 성공"
+        } else {
+            return "로그인 실패"
+        }
+    }
+    function insert(){
+        id = prompt("id 입력");
+        ps = prompt("ps 입력");
+    }
+    function message(msg){
+        alert(msg);
+    }
+
+    insert();
+                /*
+                    자바와 C,C++와는 다르게 함수내에서 만들어진 변수는 전역으로 쓰이는 군
+                    Tip : C++은 C를 호환하기 위하여 C 메커니즘을 그래로 가져왔다.
+                */
+    result = login(id, ps);
+    message(result);
+
+    insert();
+    result = login(id, ps);
+    message(result);
+
+    insert();
+    message(login(id,ps));
+    /*
+     쓰레기를 넣으면 쓰레기가 나온다.
+     */
+
+    //자바스크립트에서는 함수를 정의하는 여라 가지 방식이 있다. 바로 이해하기위해 알아두도록하자.
+
+    var change_each_others= function(a, b){
+        var temp = a;
+        num1 = b;
+        num2 = temp;
+        document.write("서로 값 변경<br>");
+    }
+    //지역변수 개념 어디있냐 불편하구만
+    var num1= 1,num2=10;
+    document.write("num1 는 "+num1+" num2는"+num2+"<br>");
+    change_each_others(num1,num2);
+    document.write("num1 는 "+num1+" num2는"+num2);
+
+    //익명함수 쓸만하네
+    (function(){
+        alert("난 이름도 필요없고 한번만 쓰고 버릴거야");
+    })/*앞까지 익명함수정의*/();//익명함수 호출
+</script>
+</body>
+</html>
