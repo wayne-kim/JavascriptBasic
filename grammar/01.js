@@ -15,7 +15,7 @@ foo(x,y);
 if(x===0){
     x=123;
 }
-//함수 정의
+//08함수 정의
 function foo(a,b){
     return a+b;
 }
@@ -36,7 +36,7 @@ console.log("더 큰 숫자 : "+bignum);
 //eval()을 통한 객체 리터럴 평가
 console.log(eval('{foo:123}'));
 
-//함수 즉시 호출
+//08함수 즉시 호출
 /*
 (function () {
     return 'abc';
