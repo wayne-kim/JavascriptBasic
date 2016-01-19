@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열</title>
+</head>
+<body>
+<script>
+    var array = ['내가',' 제일',' 잘나가'];
+    var subjects = ['너가','누가','오빠차가','겁나 내가'];
+
+    document.write(array.toString()+"<br>");
+    /*
+        나중에 오버라이딩 되는 지 확인해서 toString()을 출력할 때 콤마(,)를 제거해서 출력해보자.
+     */
+    for(var i=0;i<subjects.length;i++){
+        array[0]=subjects[i];
+        document.write(array[0]+array[1]+array[2]+"<br>");
+    }
+
+    //매개변수를 배열로 만드는 함수
+    //C와는 다르게 배열로 return 가능하네. 객체는 역시 좋은 것이다.
+    function get_array(){
+        var array = [];
+        for(var i=0; i<arguments.length; i++){
+            array.push(arguments[i]);
+        }
+        return array;
+    }
+    var sentence = get_array('니!','지금! 내한태 던지기 하나?<br>');
+    document.write(sentence);
+
+    var sentence2 = "i hate a lowercase letter";
+    document.write(sentence2.toUpperCase()+"<br>");
+
+    var array2= ['a','b','c','d'];
+    array2.shift();
+    array2.unshift('A');
+    document.write(array2);
+    /*
+        push,pop 등등 자료구조에서 많이 나오는 스택, 큐, 연결리스트 등의 개념을 쉽게처리 적용할 수 있게 이미 메스드가 정의되어 있다.
+     */
+</script>
+</body>
+</html>
