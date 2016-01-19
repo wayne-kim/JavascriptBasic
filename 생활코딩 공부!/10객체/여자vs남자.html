@@ -67,6 +67,17 @@
     부부.남자.speck();
     부부.여자.spcek();
 
+    //자바와 동일하게 자기 자신객체를 가리킬때
+    document.write("<hr>");
+    var THIS = {
+        'lists' : {'이름' : '김은찬', '학과': '컴퓨터공학', '나이':'반오십'},
+        'show' : function(){
+            for(var list in this.lists){
+                document.write(list+" : "+this.lists[list]+"<br>");
+            }
+        }
+    }
+    THIS.show();
 </script>
 </body>
 </html>
