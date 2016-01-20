@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클로져! 객체 get/setter</title>
+</head>
+<body>
+<script>
+    function private_value(value){
+        return {
+            get_value : function(){
+                return value;
+            },
+            set_value : function(_value){
+                if(_value === 'String'){
+                    value = _value;
+                } else {
+
+                }
+
+            }
+        }
+    }
+    var value1 = private_value("클로저 이놈이 좀 객체지향할 때 쓸만할 듯");  //C++ 객체지향에서 가장 중요한 개념 캡슐화!!!!!!!!!!!! 외부로 부터 보호, 하지만 접근도 가능해야하지
+    var value2 = private_value("근대 이거 유호범위를 클로저라고하는 건가?");
+    value1.set_value("설명해주면 좋겠네");
+    value2.set_value("안 해주면 구글에 검색함");
+    //매커니즘이라고 하는 거 보니 돌아가는 방식이라는 거군
+    //복 붙
+    //내부함수는 외부함수의 지역변수에 접근 할 수 있는데 외부함수의 실행이 끝나서 외부함수가 소멸된 이후에도 내부함수가 외부함수의 변수에 접근 할 수 있다.
+    //흠... 클로저란 녀석은 객체이고 이 객체는 내부 함수와 사용했던 외부 값을 포함하네
+
+    alert(value1.get_value());    //() 안 붙여주니까 그냥 함수를 텍스트로 뽑아버리네; 보안상 문제 크겠는 데;
+    alert(value2.get_value());
+
+    /*
+    function function1(){
+        var function1_value = 1;
+    }
+    alert(function1_value);
+    */ // 위 함수를 실행하면 function1_value 가 소멸되어 alert(function1_value); 가 실행안 되는 것을 볼 수 있다.
+
+    /*
+        그렇다면 위에서 말한 클로저란 객체의 역할의 더욱 확실해진다.
+        내부 함수가 외부 함수의 값을 가지면 상식적으로 에러가 나는 게 당연하다.
+        그렇다면 내부적으로 이를 처리하는 객체를 만들어서 해결한 것으로 추측된다.
+        그리고 이로 인해 얻을 수 있는 이점이 아무 많을 것으로 예상 된다.
+     */
+
+     // 이벤트를 기반!!!!!! 이라고 하네
+</script>
+</body>
+</html>
