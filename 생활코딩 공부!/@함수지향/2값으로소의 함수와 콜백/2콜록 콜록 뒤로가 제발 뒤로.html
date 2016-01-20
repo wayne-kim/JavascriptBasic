@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call 과 back</title>
+</head>
+<body>
+<script>
+    //느낌상 뒤에 있는 녀석을 부르는 느낌인데, 전에 썻던 녀석을 부르는 걸까? 프로그램상의 뒤? 예언이 맞나 보자.
+    //복 붙
+    function sortNumber(a,b){
+        // 위의 예제와 비교해서 a와 b의 순서를 바꾸면 정렬순서가 반대가 된다.
+        return b-a;
+    }
+    var numbers = [20, 10, 9,8,7,6,5,4,3,2,1];
+    alert(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+
+    /*분석
+      sort의 인자값으로 함수==값을 보냈는 데.
+      이 값은 sort함수를 제어하는 데 사용되었다.
+      지금까지 본 결과로는 매개변수를 많이 안 적어도 되는 장점이 있는 것 같다.
+      그리고 sort도 함수==메소드 인데.
+      이 녀석의 제어한다.
+      내부적으로 컴파일러가 여러가 변환을 많이 할거라 생각든다.
+      참으로 신기한데 더 봐야겠다.
+     */
+</script>
+</body>
+</html>

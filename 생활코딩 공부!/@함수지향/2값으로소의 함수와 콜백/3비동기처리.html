@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-1.12.0.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $.get('./datasource.json.js', function(result){
+        console.log(result);
+    }, 'json');
+
+
+
+</script>
+</body>
+</html>
+<!--
+이메일 보내는 방식으로 동기, 비동기 이해하기
+
+글작성->이메일발송->작성완료    //동기
+
+글작성->이메일발송예약->작성완료  //비동기
+뒤에서 움직는 프로그램이 발송
+*/
+/*Javascript에서는 비동기를 Ajax로 한다.!!! 이것만 알아도 반은 알고 있는 것
+asynchronous javascript and xml
+$.get("요청을 처리해줄 서버", function(result){    //서버에서 보내준 데이터는 함수의 매개변수로 간다.
+창이 뛰오고 창에 데이터를 출력해라!
+}
+-->
