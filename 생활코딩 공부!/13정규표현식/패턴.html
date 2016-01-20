@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>패턴실습</title>
+</head>
+<body>
+<script>
+    /*
+        ( ) : 그룹
+        +   : 앞의 문자가 하나 이상
+        \w  : 0~9, a~z, A~Z
+        \s  : space 여백
+        /(\w+)\s(\w+)
+     */
+    var pattern = /(\w+)\s(\w+)/;
+    var str = 'boy male';
+    var result = str.replace(pattern, "$2, $1");
+    console.log(result);
+    /*
+        정규표현을 쓸때가 많으니!
+        꼭 나중에 공부하자.
+        볼때마다 새롭네.
+
+
+        ... reset
+     */
+</script>
+</body>
+</html>

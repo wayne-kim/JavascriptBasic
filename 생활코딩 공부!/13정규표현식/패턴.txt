@@ -1,0 +1,28 @@
+var pattern = /a/;
+var pattern = new RegExp('a');
+
+객체를 변수에 대입했다고 생각해라.
+
+추출, 테스트, 치환
+
+반환값은 배열형태
+
+검색대상에서 찾은 패턴을 배열형태로 = pattern.exec('검색대상'); //추출
+. : 1문자
+검색에서 패턴의 여부 = pattern.test('검색대상'); // 테스트
+
+문자열에서 패턴찾기
+var array = '나태하게 살지마라';
+var pattern = /나태/;
+array.match(패턴);
+array.replace(패턴,배열에서 찾은 패턴을 해당값으로 치환);
+
+옵션
+i : 대소문자 구분하지 않는다.
+var pattern = /a/i; // 패턴 뒤에 옵션을 붙인다.
+
+g : 모든 검색 결과를 리턴
+var pattern = /a/g;
+
+여래개 옵션을 쓰고 싶다면
+var pattern = /a/ig;    //개 쉽군
