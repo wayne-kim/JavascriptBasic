@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+</head>
+<body>
+<script>
+    //모듈화의 근간!
+    var value = 'global';
+    (function(){
+        var value = 'local';
+        alert(value);
+        //웹스톰 정말 괜찮은 게. 에디터 편집창 내에서 색을 통해 이 변수가 지역,전역 변수인지 알수 있게 만들어놨네... 역시 좋아
+    })();
+    //alert(value2); 없는 놈 호출한다고 에러
+    alert(value);
+    /*
+        글로벌로 써야하는 변수 외에는 지역변수로 쓰자! 이게 버그를 예방할 수 있다.
+     */
+</script>
+</body>
+</html>

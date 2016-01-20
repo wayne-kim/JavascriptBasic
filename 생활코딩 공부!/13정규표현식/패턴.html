@@ -13,7 +13,7 @@
         \s  : space 여백
         /(\w+)\s(\w+)
      */
-    var pattern = /(\w+)\s(\w+)/;
+    var pattern = /(\w+)\s(\w+)/g;
     var str = 'boy male';
     var result = str.replace(pattern, "$2, $1");
     console.log(result);

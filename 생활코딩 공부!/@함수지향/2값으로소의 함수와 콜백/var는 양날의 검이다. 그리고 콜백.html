@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>양날의 검</title>
+</head>
+<body>
+<script>
+    //자바스크립트에서 함수는 값이다!
+    function a(value){
+        return   value*value;
+    }
+    function b(func, value){
+        var x = func(value);
+        return x;
+    }
+    var c = b(a, 10);
+    alert(c);
+    //-------------------------------------------------------------
+
+    //리턴값으로 값(함수) 보내기
+    function cal(mode){
+        var funcs = {
+            'plus' : function(left, rigth){return left+rigth},
+            'minus' : function(left, right){return left-right}
+        }
+        return funcs[mode];
+        //return funcs.puls(10,20); 이녀석은 함수가 아니라 값을 보내는 것
+    }
+    alert(cal('plus')(2,1));
+    /* 쪼개서 분석해보자.
+     1. cal('plus') 이녀석의 반환값은  'plus' : function(left, rigth){return left+rigth} 이 녀석이다.
+     2. 이 반환받은 함수가 있고 그러니까 plus가 있고 그 뒤에 (2,1)이 있는 것 이니까.
+     결국은 plus(2,1)이 될 것이다.
+     */
+    alert(cal('minus')(2,1));
+    //----------------------------------------------------------
+
+    //배열에 있는 함수도 똑~ 깥 ~ 다. 함수는 결국 값
+    var process = [
+        function(input){return input+10},
+        function (input){return input*input},
+        function (input){return input/2}
+    ];
+    var input = 1;
+    for(var i=0; i<process.length;i++){
+        input = process[i](input);//11 -> 121 -> 121/2
+        alert(input);
+    }
+    //이쯤되면 컴파일러가 걱정이네 ㅅㅂ
+    //-----------------------------------------------------
+
+    /*
+    first class citizen/object/entity(실체)/value
+     */
+
+</script>
+</body>
+</html>
