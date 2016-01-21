@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>디스 이즈 스파르타!</title>
+</head>
+<body>
+<script>
+    //this는 속해있는 객체를 가르킨다.
+    (function(){
+        if(window===this){
+            document.write("this와 window는 같다");
+        }
+    })();
+
+    var o = {
+        func : function(){
+            if(o===this){   //전역객체는 전부 window의 프로퍼티(속성)이다. window.o===this라 적어도 동일하다.
+                document.write("o 와 this는 같다");
+            }
+        }
+    }
+    o.func();
+    //
+</script>
+</body>
+</html>
