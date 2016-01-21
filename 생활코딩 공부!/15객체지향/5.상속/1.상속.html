@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>준비</title>
+</head>
+<body>
+<script>
+    function Person(name){
+        this.name = name;
+    }
+    Person.prototype.name=null;
+    Person.prototype.introduce = function(){
+        return 'My name is '+this.name;
+    }
+    var p1 = new Person('wayne');
+    document.write(p1.introduce()+"<br />");
+
+    //-----------------------
+    function Person(name){
+        this.name = name;
+    }
+    Person.prototype.name=null;
+    Person.prototype.introduce = function(){
+        return 'My name is '+this.name;
+    }
+
+    function Programmer(name){
+        this.name = name;
+    }
+    Programmer.prototype = new Person();
+
+    var p1 = new Programmer('egoing');
+    document.write(p1.introduce()+"<br />");
+
+    //---------------------------
+
+    function Person(name){
+        this.name = name;   //어차피 프로터타입으로 네임을 추가하는 데 왜 필요하지? 생성자 역할인거 같은 데.
+    }
+    Person.prototype.name=null;
+    Person.prototype.introduce = function(){
+        return 'My name is '+this.name;
+    }
+
+    function Programmer(name){
+        this.name = name;
+    }
+    Programmer.prototype = new Person();
+    Programmer.prototype.coding = function(){
+        return "hello world";
+    }
+
+    var p1 = new Programmer('egoing');
+    document.write(p1.introduce()+"<br />");
+    document.write(p1.coding()+"<br />");
+</script>
+</body>
+</html>
