@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>확장</title>
+</head>
+<body>
+<script>
+    /*
+    function getRandomindex(arr){
+        var index = Math.floor(Math.random()*arr.length);
+        return index;
+    }
+    var Array = ['내장객체배열을','확장해보자']
+    for(var i=0;i<5;i++){
+        document.write(Array[getRandomindex(Array)]);
+        document.write("<br>");
+    }
+    */
+    Array.prototype.getrandom = function(){
+        return Math.floor(Math.random()*this.length);
+
+    }
+    var array = new Array('내장객체','확장하기');
+    for(var i=0;i<5;i++){
+        var index = array.getrandom(); // ()안 붙이면 정의문 그대로 오니까 조심하자. 너무 유연하다.
+        document.write(index+ ":"+array[index]+"<br>");
+
+    }
+
+</script>
+</body>
+</html>
