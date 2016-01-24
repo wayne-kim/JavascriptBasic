@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제어대상 찾기</title>
+</head>
+<body>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<script>
+    //document.getElementsByTagName('태그명'); NodeList라는 유사 배열에 담아서 반환한다.
+    var lis = document.getElementsByTagName('li');
+    for(var i=0; i < lis.length; i++){
+        lis[i].style.color='red';
+    }
+</script>
+<!-- ___________________getElementsByTagName___________________________________ -->
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ol>
+<script>
+    //ul안에 있는 li태그만 적용하고 싶다면 다음과 같은 필터링을 해야한다. 많이 수동적이다...
+    var ul = document.getElementsByTagName('ul')[1];
+    var lis = ul.getElementsByTagName('li');
+    for(var i=0; lis.length; i++){
+        lis[i].style.color='red';
+    }
+</script>
+
+
+<!-- _________________getElementsByClassName____________________________________ -->
+<ul>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li class="active">JavaScript</li>
+</ul>
+<script>
+    //클레스명을 주고 특정 태그만 찾아서 적용하기
+    var lis = document.getElementsByClassName('active');
+    for(var i=0; i < lis.length; i++){
+        lis[i].style.color='red';
+    }
+</script>
+
+
+<!-- __________________getElementById_________________________________ -->
+<ul>
+    <li>HTML</li>
+    <li id="active">CSS</li>
+    <li>JavaScript</li>
+</ul>
+<script>
+    var li = document.getElementById('active');
+    li.style.color='red';
+</script>
+
+
+</body>
+</html>
