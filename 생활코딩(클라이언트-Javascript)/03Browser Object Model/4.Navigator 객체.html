@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+</head>
+<body>
+<!--
+    Navigator 객체로 알 수 있는 것들
+    브라우저,버전
+    왜 필요한가?
+    각 브라우저 마다 조금씩 다르기 때문이다.
+    appName :  크롬, 파이어폭스 등등 쓰는 브라우저에 따라 다르게 나온다.
+    appVersion : 버전이 출력된다.
+    userAgent :  브라우저가 서버에 알려주는 버전이다. 브라우저마다 다르게 나올 수 있다.
+    platform : 브라우저가 동작하고 있는 운영체제 정보
+
+    기능테스트!!!
+    //주석은 자동정렬 안되네
+
+    if (!Object.keys) {
+     Object.keys = (function () {
+    'use strict';
+    var hasOwnProperty = Object.prototype.hasOwnProperty,
+        hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+        dontEnums = [
+          'toString',
+          'toLocaleString',
+          'valueOf',
+          'hasOwnProperty',
+          'isPrototypeOf',
+          'propertyIsEnumerable',
+          'constructor'
+        ],
+        dontEnumsLength = dontEnums.length;
+
+    return function (obj) {
+      if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+        throw new TypeError('Object.keys called on non-object');
+      }
+
+      var result = [], prop, i;
+
+      for (prop in obj) {
+        if (hasOwnProperty.call(obj, prop)) {
+          result.push(prop);
+        }
+      }
+
+      if (hasDontEnumBug) {
+        for (i = 0; i < dontEnumsLength; i++) {
+          if (hasOwnProperty.call(obj, dontEnums[i])) {
+            result.push(dontEnums[i]);
+          }
+        }
+      }
+      return result;
+    };
+  }());
+}
+
+    다음 코드가 어떻게 쓰는 지는 아주 간단하다.
+    예외처리방법으로 Object객체에 keys라는 속성(프라퍼티)가 없는 브라우저 버전에서도 돌아갈 수 있게 개발자가 정의한 것이다.
+    뭐 지금은 완벽하게 자바스크립트를 이해한 게아니라서 이정도만 파악하고 넘어간다.
+-->
+</body>
+</html>
