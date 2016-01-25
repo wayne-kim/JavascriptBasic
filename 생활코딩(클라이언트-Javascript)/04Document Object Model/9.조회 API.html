@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>조회 API</title>
+</head>
+<body>
+<ul>
+    <li class="marked">html</li>
+    <li>css</li>
+    <li id="active">JavaScript
+        <ul>
+            <li>JavaScript Core</li>
+            <li class="marked">DOM</li>
+            <li class="marked">BOM</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    //코드 전체에서 marked 클레스명 찾아서 유사배열로 반환한다.
+    var list = document.getElementsByClassName('marked');
+    console.group('document');
+    for(var i=0; i<list.length; i++){
+        console.log(list[i].textContent);
+    }
+    console.groupEnd();
+
+    console.group('active');
+    var active = document.getElementById('active');//id가 active인 객체를 반환한다.
+    var list = active.getElementsByClassName('marked');//active 식별자에서 maked라는 클레스명을 가진 객체를 유사배열로 반환한다.
+    for(var i=0; i<list.length; i++){
+        console.log(list[i].textContent);
+    }
+    console.groupEnd();
+</script>
+</body>
+</html>

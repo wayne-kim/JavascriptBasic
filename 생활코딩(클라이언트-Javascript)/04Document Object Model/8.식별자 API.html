@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>식별자 API</title>
+</head>
+<body>
+<ul>
+    <li>html</li>
+    <li>css</li>
+    <li id="active" class="important current">JavaScript</li>
+</ul>
+<script>
+    console.log(document.getElementById('active').tagName)
+    var t = document.getElementById('active');
+    t.tagName = 'a';  //1. 읽기 전용이라서 변경되지 않는 다. 어떻게 읽기전용으로 할 수 있을 까? private?
+    document.getElementById('active').tagName = 'a';//2
+    //참조형 변수이기 때문에 1이나 2나 결국 객체에 적용된다. 하지만 이 녀석은 읽기전용 프로퍼티라서 변경되지 않는다.
+
+    var active = document.getElementById('active');//id active를 가진 객체를 변수에 넣는다.
+    console.log(active.id);
+    active.id = 'deactive'; //id는 읽기와 쓰기 둘다!! 가능하다!!!
+    console.log(active.id);
+
+    var active = document.getElementById('deactive');
+    // class 값을 변경할 때는 프로퍼티의 이름으로 className을 사용한다.
+    active.className = "important current";
+    console.log(active.className);
+    // 클래스를 추가할 때는 아래와 같이 문자열의 더한다.
+    active.className += " readed";
+
+    active.id = 'active'
+    function loop(){
+        for(var i=0; i<active.classList.length; i++){
+            console.log(i, active.classList[i]);
+        }
+    }
+</script>
+<input type="button" value="DOMTokenList" onclick="console.log(active.classList);" />
+<input type="button" value="조회" onclick="loop();" />
+<input type="button" value="추가" onclick="active.classList.add('marked');" />
+<input type="button" value="제거" onclick="active.classList.remove('important');" />
+<input type="button" value="토글" onclick="active.classList.toggle('current');" />
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery 객체</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+<ul>
+    <li id="target">HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+</ul>
+<script>
+    var lis = $('li');//css 선택자 사용
+    lis.css('text-decoration','underline').css('color','red');
+    console.log(lis.length);
+    /*
+        for(var li in lis){
+            console.log(li);
+        }
+    */
+    alert("1");
+
+
+    for(var i=0; i<lis.length;i++){
+        console.log(lis[i]);
+    }
+    var t = document.getElementById('target');
+    t.constructor;
+    var li = $(t);
+    li.css('color','blue');
+    alert("2");
+
+
+    var li = $('li');
+    li.map(function(index, elem){
+        console.log(index, elem);
+        $(elem).css('color', 'green');
+    })
+    alert("3");
+    //API를 잘 써야한다 ㅠㅠ
+</script>
+</body>
+</html>
