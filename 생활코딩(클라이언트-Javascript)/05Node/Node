@@ -1,0 +1,25 @@
+Node 객체는 DOM에서 시조와 같은 역할을 한다.
+모든 DOM 객체는 Node 객체를 상속 받는 다.    //Window객체도 받겠지?! 창을 제어할 때 쓰는 요소들이 들어있는 객체일뿐이니까
+
+Node객체의 주요한 임무
+
+관계 : 엘리먼트는 서로 부모, 자식, 혹은 형제자매 관계로 연결되어 있다. 각각의 Node가 다른 Node와 연결된 정보를 보여주는 API를 통해서 문서를 프로그래밍적으로 탐색할 수 있다.
+Node.childNodes     //자식 찾기
+Node.firstChild     //첫번째 자식찾기
+Node.lastChild      //마지막 자식찾기
+Node.nextSibling    //다음 형제 찾기
+Node.previousSibling    //이전 형제 찾기
+Node.contains()         //이 녀석을 포함하고 있는가?
+Node.hasChildNodes()    //자식을 포함하고 있는가?
+
+노드의 종류 : Node 객체는 모든 구성요소를 대표하는 객체이기 때문에 각각의 구성요소가 어떤 카테고리에 속하는 것인지를 알려주는 식별자를 제공한다.
+Node.nodeType
+Node.nodeName
+
+값 : Node 객체의 값을 제공하는 API
+Node.nodeValue
+Node.textContent
+
+자식관리 : Node 객체의 자식을 추가하는 방법에 대한 API
+Node.appendChild()
+Node.removeChild()
