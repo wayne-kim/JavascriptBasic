@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 노드 변경 API</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+
+<div class="target">
+    content1
+</div>
+<div class="target">
+    content2
+</div>
+<script>
+    alert("추가");
+    $('.target').before('<div>before</div>');
+    $('.target').after('<div>after</div>');
+    $('.target').prepend('<div>prepend</div>');
+    $('.target').append('<div>append</div>');
+</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+
+
+<div class="target" id="target1">
+    target 1
+</div>
+
+<div class="target" id="target2">
+    target 2
+</div>
+
+<input type="button" value="remove target 1" id="btn1" />
+<input type="button" value="empty target 2" id="btn2" />
+<script>
+    alert("버튼 순서대로 누르세요");
+    $('#btn1').click(function(){
+        $('#target1').remove();
+    })
+    $('#btn2').click(function(){
+        $('#target2').empty();
+    })
+</script>
+
+
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<div class="target" id="target3">
+    target 3
+</div>
+
+<div class="target" id="target4">
+    target 4
+</div>
+
+<input type="button" value="replaceAll target 1" id="btn3" />
+<input type="button" value="replaceWith target 2" id="btn4" />
+<script>
+    var switchkey = false;
+    $('#btn2').click(function(){
+        switchkey = true;
+    })
+    $('#btn3').click(function(){
+        if(switchkey)$('<div>replaceAll</div>').replaceAll('#target3');
+    })
+    $('#btn4').click(function(){
+        if(switchkey)$('#target4').replaceWith('<div>replaceWith</div>');
+    })
+
+</script>
+</body>
+</html>

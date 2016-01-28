@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node 관계 API</title>
+</head>
+<body id="start">
+<ul>
+    <li><a href=".532">HTML</a></li>
+    <li><a href=".532">CSS</a></li>
+    <li><a href=".532">Javascript</a></li>
+</ul>
+<script>
+    var start = document.getElementById('start');
+    console.log(start);
+    console.log(start.firstChild);  //Node객체 중 Text객체가 나왔다. 공백,문자 등등
+    console.log(start.firstChild.nextSibling);
+    console.log(start.firstChild.nextSibling.firstChild.nextSibling);
+    start.firstChild.nextSibling.firstChild.nextSibling.style.color='red';
+
+    //모든 요소들은 Node관계를 가지고 있다.
+    console.log(start.childNodes)
+</script>
+</body>
+</html>
