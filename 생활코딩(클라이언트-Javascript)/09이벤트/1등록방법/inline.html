@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>inline</title>
+    <style> textarea {width:300px;overflow:visible} </style>
+    <script>
+        function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+        }
+    </script>
 </head>
 <body>
-
+<textarea onkeyup="resize(this)">
+인라인 방식은 이벤트를 이벤트 대상의 태그 속성으로 지정하는 것이다.
+this는 객체 자신을 가르키는 키워드이다. 유지 보수에 더욱 유리하다.
+인라인 방식은 모던웹에서 추구하는 분리에 부합하지 않는 방식이다.
+</textarea>
 </body>
 </html>
