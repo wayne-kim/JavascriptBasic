@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본동작의 취소</title>
+</head>
+<body>
+<p>기본동작 취소!</p>
+<p>웹브라우저의 구성요소들은 각각 기본적인 동작 방법을 가지고 있다.</p>
+<ul>
+    <li>텍스트 필드에 포커스를 준 상태에서 키보드를 입력하면 텍스트가 입력된다.</li>
+    <li>폼에서 submit 버튼을 누르면 데이터가 전송된다.</li>
+    <li>a 태그를 클릭하면 href 속성의 URL로 이동한다.</li>
+</ul>
+<!--
+<h1>인라인방식-취소</h1>
+<p>
+    <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org" onclick="if(document.getElementById('prevent').checked) return false;">opentutorials</a>
+</p>
+<p>
+<form action="http://opentutorials.org" onsubmit="if(document.getElementById('prevent').checked) return false;">
+    <input type="submit" />
+</form>
+</p>
+-->
+
+
+<!--
+<h1>프라퍼티방식-취소</h1>
+<p>
+    <label>prevent event on</label><input id="prevent2" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org">opentutorials</a>
+</p>
+<p>
+<form action="http://opentutorials.org">
+    <input type="submit" />
+</form>
+</p>
+<script>
+    document.querySelector('a').onclick = function(event){
+        if(document.getElementById('prevent2').checked)
+            return false;
+    };
+
+    document.querySelector('form').onclick = function(event){
+        if(document.getElementById('prevent2').checked)
+            return false;
+    };
+</script>
+-->
+
+<p>
+    <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org">opentutorials</a>
+</p>
+<p>
+<form action="http://opentutorials.org">
+    <input type="submit" />
+</form>
+</p>
+<script>
+    document.querySelector('a').addEventListener('click', function(event){
+        if(document.getElementById('prevent').checked)
+            event.preventDefault();
+    });
+
+    document.querySelector('form').addEventListener('submit', function(event){
+        if(document.getElementById('prevent').checked)
+            event.preventDefault();
+    });
+
+</script>
+</body>
+</html>

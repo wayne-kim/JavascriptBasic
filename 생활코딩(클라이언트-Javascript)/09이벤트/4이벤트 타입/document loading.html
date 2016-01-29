@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document loading</title>
+    <script>
+        window.addEventListener('load',function(){
+            var t = document.getElementById('target2');
+            console.log('위에 있어도 나중에 실행되지~');
+            console.log(t);
+            /*
+             load 이벤트는 문서내의 모든 리소스(이미지, 스크립트)의 다운로드가 끝난 후에 실행된다. 이것을 에플리케이션의 구동이 너무 지연되는 부작용을 초래할 수 있다.
+
+             익스플로우 9버전에서 나온 해결책
+             DOMContentLoaded는 문서에서 스크립트 작업을 할 수 있을 때 실행되기 때문에 이미지 다운로드를 기다릴 필요가 없다.
+             */
+        });
+    </script>
+</head>
+<body>
+<h1>문서로딩</h1>
+<p>웹페이지를 프로그래밍적으로 제어하기 위해서는 웹페이지의 모든 요소에 대한 처리가 끝나야한다.</p>
+<p>이것을 알려주는 이벤트가 load, DOMContentLoaded이다.</p>
+
+
+<script>
+    var t = document.getElementById('target');
+    console.log(t);
+    //<p>위에서 부터 아래로 해석해 나간다. 위 코드는 id가 target인 p태그가 생성되기전에 호출하기 때문에 null이 출력된다. </p>
+</script>
+<p id="target">target1</p>
+
+<h1>단순한 해결방법</h1>
+<p>스크립트 코드를 호출할 태그 뒤에 작성한다. //한줄 주석없나 개 귀찮네--></p>
+
+<h1>깔끔한 해결방법</h1>
+<p id="target2">target2</p>
+<p>head태그 안에 추가하는 방법이 있다. haed태그 안에 추가한다고 나중에 호출하는 것은 아니다. 모든 문서가 로드된 이후에 작동하도록 winodow의 laod메소드에 리스너를 정의한다.</p>
+</body>
+</html>
