@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>값 API</title>
+</head>
+<body>
+    <h1>인턴가고 싶다.</h1>
+    <p>과연! 나는 인턴을 갈 수 있을 것인가?!!!</p>
+    <p id="res">결과 : </p>
+    <input type="button" value="결과보기" onclick="result()"/>
+    <script>
+        function result(){
+            var data = document.getElementById('res').firstChild;
+            data.nodeValue = "결과 : 대연선배의 결정에 달려있다.";
+        }
+    </script>
+</body>
+</html>

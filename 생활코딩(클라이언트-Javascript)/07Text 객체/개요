@@ -1,0 +1,25 @@
+Node를 상속 받은 객체.
+<p> 생활코딩 </p>
+<p> </p> : Element 객체
+생활코딩 : text 객체
+Text객체는CharcterData객체를 상속 받는 다.
+텍스트 객체는 텍스트 노드에 대한 DOM 객체로 CharcterData를 상속 받는다.
+@주목할 것은 DOM에서는 공백이나 줄바꿈도 텍스트 노드라는 점이다.
+
+
+
+@주요기능
+값
+텍스트 노드의 값을 가져오는 API
+data
+nodeValue
+
+조작
+appendData()
+deleteData()
+insertData()
+replaceData()
+subStringData()
+
+생성
+docuemnt.createTextNode()

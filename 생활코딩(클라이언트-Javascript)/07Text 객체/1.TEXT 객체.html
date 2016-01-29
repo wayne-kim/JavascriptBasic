@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEXT 객체</title>
+</head>
+<body>
+<p id="target1"><span>Hello world</span></p>
+<p id="target2">                                               <!--첫번째 형제의 값-->
+    <span>두번째 형제의 자식값</span>
+</p>
+<script>
+    var t1 = document.getElementById('target1').firstChild; //<span>Hello world</span>
+    var t2 = document.getElementById('target2').firstChild; //여백 이놈에게는 자식이 없다.
+
+    console.log(t1.firstChild.nodeValue);
+    try{
+        console.log(t2.firstChild.nodeValue);
+    } catch(e){
+        console.log(e);
+    }
+    console.log(t2.nextSibling.firstChild.nodeValue);
+</script>
+</body>
+</html>
