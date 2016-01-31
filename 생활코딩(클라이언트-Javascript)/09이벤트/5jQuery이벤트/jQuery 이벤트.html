@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 이벤트</title>
+</head>
+<body>
+<input type="button" id="pure" value="pure">
+<input type="button" id="jquery" value="jquery">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    var target = document.getElementById('pure');
+    if(target.addEventListener){
+        target.addEventListener('click',function(event){
+            alert('pure');
+        });
+    }else {
+        target.attachEvent('onclick', function (event) {
+            alert('pure');
+        });
+    }
+
+    $('#jquery').on('click', function(event){   //on : 붙인다!!!! ,  click이라는 이벤트를 붙여서 네번째 매개함수를 실행시켜라!!
+                                                    //i am well aware of my shortcomings.
+        alert('jQuery');
+    })
+
+    //내부적으로 돌아가는 방식은 똑같겠지만 코딩시간이 세배는 줄어들것 같다.
+</script>
+</body>
+</html>
