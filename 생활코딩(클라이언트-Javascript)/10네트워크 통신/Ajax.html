@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<h1>웹통신을 이용하여 페이지 리로드 없이 데이터 가져오기</h1>
+<h2>Ajax</h2>
+<h3>Asynchronous JavaScript and XML</h3>
+<h3>비동기적 자바스크립트와 xml</h3>
+<p>
+    어떠한 작업 중 다른 일을 할 수있으면 비동기적
+    할수 없다면 동기적이라고 한다.
+</p>
+
+<hr/>
+<h1>서버 없다.</h1>
+<p>time : <span id="time"></span></p>
+<input type="button" id="execute" value="execute" />
+<script>
+    document.querySelector('input').addEventListener('click', function(event){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './time.js');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                document.querySelector('#time').innerHTML = xhr.responseText;
+            }
+        }
+        xhr.send();
+        //서버쪽을 몰라서 막 만들어봤는 데. 역시 재대로된 통신은 안되는 구나...
+    });
+</script>
+
+</body>
+</html>
